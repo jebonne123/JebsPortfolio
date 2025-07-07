@@ -358,9 +358,9 @@ const Homepage: React.FC = () => {
             </motion.h3>
             <div className="grid md:grid-cols-2 gap-8">
               {[
-                { title: 'Project 1', desc: 'A dynamic web application built with React and Tailwind CSS.' },
-                { title: 'Project 2', desc: 'A scalable backend solution using Node.js and NestJS.' },
-                { title: 'Project 3', desc: 'A full-stack application integrating modern front-end and back-end technologies.' },
+                { title: 'Project 1', desc: 'TBA' },
+                { title: 'Project 2', desc: 'TBA' },
+                { title: 'Project 3', desc: 'TBA' },
               ].map((project, index) => (
                 <motion.div
                   key={index}
