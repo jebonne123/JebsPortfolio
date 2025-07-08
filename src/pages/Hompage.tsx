@@ -8,6 +8,7 @@ import { FiMail, FiPhone } from 'react-icons/fi';
 import { FaDiscord, FaTelegramPlane } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiGitlab, SiBitbucket, SiGithub, SiFigma } from 'react-icons/si';
+import ProjectsSection from './ProjectsSection';
 
 interface Section {
   id: string;
@@ -116,12 +117,13 @@ const Homepage: React.FC = () => {
 
           {/* Hamburger Menu for Mobile */}
           <button
-            className="md:hidden text-2xl p-2"
+            className="md:hidden text-2xl p-2 text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
             {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
+
         </div>
 
         {/* Mobile Menu */}
@@ -341,45 +343,8 @@ const Homepage: React.FC = () => {
           </div>
         </section>
 
-        {/* Projects */}
-        <section
-          id="projects"
-          className="min-h-screen w-screen flex items-center bg-gradient-to-br from-gray-300 via-gray-400 to-gray-200 dark:from-[#2c2724] dark:via-[#413530] dark:to-[#080707] px-6"
-        >
-          <div className="max-w-5xl mx-auto">
-            <motion.h3
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-4xl font-bold mb-12 text-black dark:text-[#E5E5E5]"
-            >
-              Projects
-            </motion.h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                { title: 'Project 1', desc: 'TBA' },
-                { title: 'Project 2', desc: 'TBA' },
-                { title: 'Project 3', desc: 'TBA' },
-              ].map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="bg-white dark:bg-[#131212]/80 p-6 rounded-xl shadow-lg hover:shadow-md dark:hover:shadow-[#E5E5E5]/20 transition-shadow"
-                >
-                  <h4 className="text-xl font-semibold mb-3 text-black dark:text-[#E5E5E5]">{project.title}</h4>
-                  <p className="text-gray-700 dark:text-[#B0B0B0] mb-4">{project.desc}</p>
-                  <a href="#" className="text-blue-600 dark:text-[#E5E5E5] hover:underline font-medium">
-                    View Project →
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* New Dynamic Projects */}
+        <ProjectsSection />
 
         {/* Contact */}
         <section
