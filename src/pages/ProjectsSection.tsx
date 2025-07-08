@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { BsHandIndex } from "react-icons/bs";
-
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 interface Project {
   title: string;
   desc: string;
@@ -81,9 +82,9 @@ const designProjects: Project[] = [
   },
 ];
 
-
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
     <section
@@ -210,12 +211,23 @@ export default function ProjectsSection() {
                   <SwiperSlide key={i}>
                     <img
                       src={src}
-                      alt=""
-                      className="rounded-xl shadow-lg w-full max-h-[600px] object-cover"
+                      alt={`Screenshot ${i + 1}`}
+                      className="rounded-xl shadow-lg w-full max-h-[600px] object-cover cursor-zoom-in"
+                      onClick={() => setLightboxIndex(i)}
                     />
                   </SwiperSlide>
                 ))}
               </Swiper>
+
+              {lightboxIndex !== null && (
+                <Lightbox
+                  open
+                  index={lightboxIndex}
+                  close={() => setLightboxIndex(null)}
+                  slides={selectedProject.screenshots.map((src) => ({ src }))}
+                  render={{ buttonClose: () => null }} // Optional: hide default close button
+                />
+              )}
 
               <div className="flex justify-center items-center gap-2 mt-4 text-sm text-gray-500 dark:text-gray-400">
                 <BsHandIndex className="text-lg animate-swipe mr-4" />
