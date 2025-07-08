@@ -29,12 +29,12 @@ const devProjects: Project[] = [
   {
     title: "Sugar and Molasses Inventory Module",
     desc: "Tracks sugar and molasses inflow/outflow with real-time stock updates and analytics.",
-    screenshots: ["/port1.jpg", "/port2.jpg"],
+    screenshots: ["/Sugar and Molasses Inventory/Inventory.png", "/Sugar and Molasses Inventory/trader purchase.png"],
   },
   {
     title: "Sugar Haulers Incentives Report",
     desc: "Automated generation of hauling incentive reports based on delivery and log data.",
-    screenshots: ["/port1.jpg", "/port2.jpg"],
+    screenshots: ["/Hauler Incentives Report/Hauler incenctives viewing.png", "/Hauler Incentives Report/hauler incentives report print.png"],
   },
   {
     title: "Student Information System - BNHS",
@@ -62,7 +62,7 @@ const designProjects: Project[] = [
   {
     title: "Bulk Rename Utility",
     desc: "Redesigned the UI for a file renaming tool with a cleaner, more intuitive interface.",
-    screenshots: ["/design1.jpg", "/design2.jpg"],
+    screenshots: ["/Bulk rename Utility/Whole.png", "/Bulk rename Utility/File.png", "/Bulk rename Utility/file 2.png"],
   },
   {
     title: "E-Para",
