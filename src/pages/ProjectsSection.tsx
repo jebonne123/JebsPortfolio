@@ -43,6 +43,7 @@ const devProjects: Project[] = [
     screenshots: ["/Balo-i SIS/login.png", "/Balo-i SIS/loging in.png","/Balo-i SIS/super admin dashboard.png", "/Balo-i SIS/enrollees.png", 
       "/Balo-i SIS/enrollees2.png", "/Balo-i SIS/student details.png", "/Balo-i SIS/student details2.png",
       "/Balo-i SIS/student grade input.png", "/Balo-i SIS/super admin dashboard.png", "/Balo-i SIS/Reports.png", "/Balo-i SIS/settings.png", 
+      "/Balo-i SIS/student enrollment.png",
     ],
   },
   {
@@ -78,12 +79,18 @@ const designProjects: Project[] = [
   {
     title: "Hey App",
     desc: "Mobile interface designed to aid communication for the deaf and mute community.",
-    screenshots: ["/design3.jpg", "/design4.jpg"],
+    screenshots: ["/Hey App/Get started.png", "/Hey App/Whole.png", "/Hey App/Sign in.png", "/Hey App/Sign up.png",
+      "/Hey App/hand gesture.png", "/Hey App/hand is visible.png", "/Hey App/home page.png",
+      "/Hey App/account.png", "/Hey App/settings.png",
+    ],
   },
   {
     title: "Pedro Herraras Peanut Butter",
     desc: "Mobile POS design for a peanut butter business, featuring sales and inventory tracking.",
-    screenshots: ["/design3.jpg", "/design4.jpg"],
+    screenshots: ["/Pedro Herraras Peanut Butter/landing page.png", "/Pedro Herraras Peanut Butter/Whole.png", 
+      "/Pedro Herraras Peanut Butter/info.png", "/Pedro Herraras Peanut Butter/confirm and pay.png",
+      "/Pedro Herraras Peanut Butter/confirm order.png",
+    ],
   },
 ];
 
