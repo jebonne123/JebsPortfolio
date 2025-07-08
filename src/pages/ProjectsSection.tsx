@@ -19,8 +19,8 @@ const devProjects: Project[] = [
   },
   {
     title: "SMA Inventory Management Module",
-    desc: "Smart inventory tracking with supplier linking and emailing feature, restocking feature, and purchase oprder, quotation, reports.",
-    screenshots: ["/Inventory Management System/Item Inventory.png", "/Inventory Management System/Add Item.png" ],
+    desc: "Smart inventory tracking with supplier linking, automated restocking, emailing, purchase orders, quotations, and report generation.",
+    screenshots: ["/Inventory Management System/Item Inventory.png", "/Inventory Management System/Add Item.png"],
   },
   {
     title: "Sugar and Molasses Inventory Module",
@@ -37,17 +37,42 @@ const devProjects: Project[] = [
     desc: "Manages student records, grading, SF1–SF10 reports, and enrollment workflows.",
     screenshots: ["/port1.jpg", "/port2.jpg"],
   },
+  {
+    title: "Loan Management System",
+    desc: "A system for managing loan applications, approvals, payments, and balances.",
+    screenshots: ["/port1.jpg", "/port2.jpg"],
+  },
+  {
+    title: "Chatmail",
+    desc: "A real-time messaging and email platform combined into one seamless interface.",
+    screenshots: ["/port1.jpg", "/port2.jpg"],
+  },
+  {
+    title: "Hirehub",
+    desc: "A freelancing platform for job posting, bidding, and secure hiring.",
+    screenshots: ["/port1.jpg", "/port2.jpg"],
+  },
 ];
 
 const designProjects: Project[] = [
   {
-    title: "UI Redesign",
-    desc: "Figma revamp of admin dashboard with better UX flows.",
+    title: "Bulk Rename Utility",
+    desc: "Redesigned the UI for a file renaming tool with a cleaner, more intuitive interface.",
     screenshots: ["/design1.jpg", "/design2.jpg"],
   },
   {
-    title: "Landing Page Concept",
-    desc: "Flat design + animation concept for a modern startup.",
+    title: "E-Para",
+    desc: "Mobile app design for a bus tracking system in Misamis Oriental.",
+    screenshots: ["/design3.jpg", "/design4.jpg"],
+  },
+  {
+    title: "Hey App",
+    desc: "Mobile interface designed to aid communication for the deaf and mute community.",
+    screenshots: ["/design3.jpg", "/design4.jpg"],
+  },
+  {
+    title: "Pedro Herraras Peanut Butter",
+    desc: "Mobile POS design for a peanut butter business, featuring sales and inventory tracking.",
     screenshots: ["/design3.jpg", "/design4.jpg"],
   },
 ];
@@ -60,59 +85,93 @@ export default function ProjectsSection() {
       id="projects"
       className="min-h-screen w-full bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 dark:from-[#2c2724] dark:via-[#413530] dark:to-[#080707] px-6 py-24"
     >
-      <div className="max-w-6xl mx-auto space-y-28">
+    <div className="max-w-6xl mx-auto space-y-20">
         {/* Web & Desktop Development */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <h3 className="text-center text-4xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-700 to-black dark:from-[#f4f4f4] dark:via-[#aaa] dark:to-[#f4f4f4] leading-tight pb-1">
-          Web & Desktop Development
-        </h3>
-          <Swiper spaceBetween={20} slidesPerView={1.1} breakpoints={{ 768: { slidesPerView: 2.2 } }}>
-            {devProjects.map((project, i) => (
-              <SwiperSlide key={i}>
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  className="transition-transform duration-300 bg-white dark:bg-[#131212]/90 p-6 rounded-2xl shadow-xl hover:shadow-2xl flex flex-col h-full border border-gray-200 dark:border-[#3a3a3a]"
-                >
-                  <h4 className="text-2xl font-semibold mb-2 text-black dark:text-[#E5E5E5]">{project.title}</h4>
-                  <p className="text-gray-700 dark:text-[#B0B0B0] mb-4 leading-relaxed">{project.desc}</p>
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="mt-auto text-indigo-600 dark:text-indigo-400 font-semibold hover:underline"
-                  >
-                    View Project →
-                  </button>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+          <h3 className="text-center text-3xl md:text-4xl font-extrabold mb-4 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-700 to-black dark:from-[#f4f4f4] dark:via-[#aaa] dark:to-[#f4f4f4] leading-tight">
+            Web & Desktop Development
+          </h3>
 
-        {/* Web Designing */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <h3 className="text-center text-4xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-700 to-black dark:from-[#f4f4f4] dark:via-[#aaa] dark:to-[#f4f4f4] leading-tight pb-1">
+        <Swiper spaceBetween={20} slidesPerView={1.1} breakpoints={{ 768: { slidesPerView: 2.2 } }}>
+          {devProjects.map((project, i) => (
+            <SwiperSlide key={i}>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                className="transition-transform duration-300 bg-white dark:bg-[#131212]/90 p-4 md:p-6 rounded-2xl shadow-xl hover:shadow-2xl flex flex-col h-full border border-gray-200 dark:border-[#3a3a3a]"
+              >
+                <img
+                  src={project.screenshots[0]}
+                  alt="preview"
+                  className="rounded-lg mb-3 w-full h-36 md:h-40 object-cover shadow"
+                />
+                <h4 className="text-xl font-semibold mb-2 text-black dark:text-[#E5E5E5]">{project.title}</h4>
+                <p className="text-gray-700 dark:text-[#B0B0B0] mb-4 leading-relaxed text-sm">{project.desc}</p>
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="mt-auto text-indigo-600 dark:text-indigo-400 font-semibold hover:underline text-sm"
+                >
+                  View Project →
+                </button>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+          <div className="flex justify-center items-center gap-2 mt-4 text-gray-600 dark:text-gray-400 text-xs md:text-sm">
+            <BsHandIndex className="text-lg animate-swipe mr-4" />
+          <span className="animate-pulse">Swipe to explore projects</span>
+        </div>
+      </motion.div>
+
+      {/* 👇 Divider between sections */}
+      <div className="relative my-16">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-600" />
+        </div>
+        <div className="relative flex justify-center">
+          <span className="bg-white dark:bg-[#131212] px-4 text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-widest uppercase">
+            Next Section
+          </span>
+        </div>
+      </div>
+
+
+      {/* Web Designing */}
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <h3 className="text-center text-3xl md:text-4xl font-extrabold mb-4 pb-1  text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-700 to-black dark:from-[#f4f4f4] dark:via-[#aaa] dark:to-[#f4f4f4] leading-tight">
           Web Designing
         </h3>
-          <Swiper spaceBetween={20} slidesPerView={1.1} breakpoints={{ 768: { slidesPerView: 2.2 } }}>
-            {designProjects.map((project, i) => (
-              <SwiperSlide key={i}>
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  className="transition-transform duration-300 bg-white dark:bg-[#131212]/90 p-6 rounded-2xl shadow-xl hover:shadow-2xl flex flex-col h-full border border-gray-200 dark:border-[#3a3a3a]"
+        <Swiper spaceBetween={20} slidesPerView={1.1} breakpoints={{ 768: { slidesPerView: 2.2 } }}>
+          {designProjects.map((project, i) => (
+            <SwiperSlide key={i}>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                className="transition-transform duration-300 bg-white dark:bg-[#131212]/90 p-4 md:p-6 rounded-2xl shadow-xl hover:shadow-2xl flex flex-col h-full border border-gray-200 dark:border-[#3a3a3a]"
+              >
+                <img
+                  src={project.screenshots[0]}
+                  alt="preview"
+                  className="rounded-lg mb-3 w-full h-36 md:h-40 object-cover shadow"
+                />
+                <h4 className="text-xl font-semibold mb-2 text-black dark:text-[#E5E5E5]">{project.title}</h4>
+                <p className="text-gray-700 dark:text-[#B0B0B0] mb-4 leading-relaxed text-sm">{project.desc}</p>
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="mt-auto text-indigo-600 dark:text-indigo-400 font-semibold hover:underline text-sm"
                 >
-                  <h4 className="text-2xl font-semibold mb-2 text-black dark:text-[#E5E5E5]">{project.title}</h4>
-                  <p className="text-gray-700 dark:text-[#B0B0B0] mb-4 leading-relaxed">{project.desc}</p>
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="mt-auto text-indigo-600 dark:text-indigo-400 font-semibold hover:underline"
-                  >
-                    View Project →
-                  </button>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
-      </div>
+                  View Project →
+                </button>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+          <div className="flex justify-center items-center gap-2 mt-4 text-gray-600 dark:text-gray-400 text-xs md:text-sm">
+          <BsHandIndex className="text-lg animate-swipe mr-4" />
+          <span className="animate-pulse">Swipe to explore designs</span>
+        </div>
+
+      </motion.div>
+    </div>
+
 
       {/* Modal for viewing screenshots */}
       <AnimatePresence>
