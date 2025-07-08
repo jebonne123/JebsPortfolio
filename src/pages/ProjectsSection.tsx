@@ -20,7 +20,11 @@ const devProjects: Project[] = [
   {
     title: "SMA Inventory Management Module",
     desc: "Smart inventory tracking with supplier linking, automated restocking, emailing, purchase orders, quotations, and report generation.",
-    screenshots: ["/Inventory Management System/Item Inventory.png", "/Inventory Management System/Add Item.png"],
+    screenshots: ["/Inventory Management System/Item Inventory.png", "/Inventory Management System/Add Item.png",  "/Inventory Management System/item suppliers.png",
+     "/Inventory Management System/emailing suppliers.png",  "/Inventory Management System/sending email.png",  "/Inventory Management System/Add Item.png",
+     "/Inventory Management System/item requested.png",  "/Inventory Management System/requesting an item.png",  "/Inventory Management System/release item page.png",
+     "/Inventory Management System/material acceptance report sample.png"
+    ],
   },
   {
     title: "Sugar and Molasses Inventory Module",
@@ -76,6 +80,7 @@ const designProjects: Project[] = [
     screenshots: ["/design3.jpg", "/design4.jpg"],
   },
 ];
+
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
