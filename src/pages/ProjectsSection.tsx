@@ -40,7 +40,10 @@ const devProjects: Project[] = [
   {
     title: "Student Information System - BNHS",
     desc: "Manages student records, grading, SF1–SF10 reports, and enrollment workflows.",
-    screenshots: ["/port1.jpg", "/port2.jpg"],
+    screenshots: ["/Balo-i SIS/login.png", "/Balo-i SIS/loging in.png","/Balo-i SIS/super admin dashboard.png", "/Balo-i SIS/enrollees.png", 
+      "/Balo-i SIS/enrollees2.png", "/Balo-i SIS/student details.png", "/Balo-i SIS/student details2.png",
+      "/Balo-i SIS/student grade input.png", "/Balo-i SIS/super admin dashboard.png", "/Balo-i SIS/Reports.png", "/Balo-i SIS/settings.png", 
+    ],
   },
   {
     title: "Loan Management System",
@@ -68,7 +71,9 @@ const designProjects: Project[] = [
   {
     title: "E-Para",
     desc: "Mobile app design for a bus tracking system in Misamis Oriental.",
-    screenshots: ["/design3.jpg", "/design4.jpg"],
+    screenshots: ["/E-Para/Get started.png", "/E-Para/Sign in.png", "/E-Para/sign in 2.png", "/E-Para/whole.png",
+      "/E-Para/create acc.png", "/E-Para/map.png", "/E-Para/map 2.png", "/E-Para/SettingsUI.png",
+     ],
   },
   {
     title: "Hey App",
@@ -212,7 +217,7 @@ export default function ProjectsSection() {
                     <img
                       src={src}
                       alt={`Screenshot ${i + 1}`}
-                      className="rounded-xl shadow-lg w-full max-h-[600px] object-cover cursor-zoom-in"
+                      className="rounded-xl shadow-lg max-w-full max-h-[80vh] object-contain mx-auto"
                       onClick={() => setLightboxIndex(i)}
                     />
                   </SwiperSlide>
